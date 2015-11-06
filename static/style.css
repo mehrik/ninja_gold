@@ -3,14 +3,19 @@
 	margin: 0px auto;
 	font-family: 'Impact';
 }
-
 #wrapper {
 	width: 960px;
 	margin: 20px;
 }
-p {
+p, #reset {
 	display: inline-block;
 }
+#reset {
+	margin-left: 680px;
+}
+	#reset input {
+		background-color: red;
+	}
 #money {
 	width: 100px;
 	margin-left: 10px;
@@ -25,8 +30,7 @@ p {
 	border: 2px solid black;
 	margin: 16px;
 }
-
-h1, .earn, form {
+h1, .earn, .golddigging {
 	display: block;
 	text-align: center;
 	margin-top: 15px;
@@ -38,7 +42,6 @@ input {
 	border-radius: 5px;
 	font-size: 16px;
 }
-
 #console {
 	overflow-y: auto;
 	border: 1px black solid;
@@ -48,12 +51,13 @@ input {
 #console p {
 	margin: 10px;
 }
-
-.green {
+.green, .red {
 	display: block;
+	font-family: arial;
+}
+.green {
 	color: green;
 }
 .red {
-	display: block;
 	color: red;
 }

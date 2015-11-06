@@ -11,12 +11,16 @@
 		<div id='your-gold'>
 			<p>Your Gold:</p>
 			<p id='money'>{{ session['gold'] }}</p>
+			<form id='reset' method='post' action='/process_money'>
+				<input type='hidden' name='action' value='reset'>
+				<input type='submit' value='RESET'>
+			</form>
 		</div>
 		<div id='action'>
 			<div class=box>
 				<h1>Farm</h1>
 				<p class='earn'>(earns 10-20 golds)</p>
-				<form method='post' action='/process_money'>
+				<form class='golddigging' method='post' action='/process_money'>
 					<input type='hidden' name='action' value='farm'>
 					<input type='submit' value='Find Gold!'>
 				</form>
@@ -24,7 +28,7 @@
 			<div class=box>
 				<h1>Cave</h1>
 				<p class='earn'>(earns 5-10 golds)</p>
-				<form method='post' action='/process_money'>
+				<form class='golddigging' method='post' action='/process_money'>
 					<input type='hidden' name='action' value='cave'>
 					<input type='submit' value='Find Gold!'>
 				</form>
@@ -32,7 +36,7 @@
 			<div class=box>
 				<h1>House</h1>
 				<p class='earn'>(earns 2-5 golds)</p>
-				<form method='post' action='/process_money'>
+				<form class='golddigging' method='post' action='/process_money'>
 					<input type='hidden' name='action' value='house'>
 					<input type='submit' value='Find Gold!'>
 				</form>
@@ -40,7 +44,7 @@
 			<div class=box>
 				<h1>Casino</h1>
 				<p class='earn'>(earns/takes 0-50 golds)</p>
-				<form method='post' action='/process_money'>
+				<form class='golddigging' method='post' action='/process_money'>
 					<input type='hidden' name='action' value='casino'>
 					<input type='submit' value='Find Gold!'>
 				</form>
