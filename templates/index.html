@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<title>Ninja Gold</title>
+	<meta name='description' content='This is a game where you can make or lose fake money! You can see how much money you make or lose'>
+	<link rel="stylesheet" type="text/css" href="{{  url_for('static', filename='style.css')  }}">
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='your-gold'>
+			<p>Your Gold:</p>
+			<p id='money'>{{ session['gold'] }}</p>
+		</div>
+		<div id='action'>
+			<div class=box>
+				<h1>Farm</h1>
+				<p class='earn'>(earns 10-20 golds)</p>
+				<form method='post' action='/process_money'>
+					<input type='hidden' name='action' value='farm'>
+					<input type='submit' value='Find Gold!'>
+				</form>
+			</div>
+			<div class=box>
+				<h1>Cave</h1>
+				<p class='earn'>(earns 5-10 golds)</p>
+				<form method='post' action='/process_money'>
+					<input type='hidden' name='action' value='cave'>
+					<input type='submit' value='Find Gold!'>
+				</form>
+			</div>
+			<div class=box>
+				<h1>House</h1>
+				<p class='earn'>(earns 2-5 golds)</p>
+				<form method='post' action='/process_money'>
+					<input type='hidden' name='action' value='house'>
+					<input type='submit' value='Find Gold!'>
+				</form>
+			</div>
+			<div class=box>
+				<h1>Casino</h1>
+				<p class='earn'>(earns/takes 0-50 golds)</p>
+				<form method='post' action='/process_money'>
+					<input type='hidden' name='action' value='casino'>
+					<input type='submit' value='Find Gold!'>
+				</form>
+			</div>
+		</div>
+		<div id='activities'>
+			<p>Activities:</p>
+			<div id='console'>
+				{% if request.form['action'] == farm %}
+					{% for i in session['log']: %}
+						<p class='log'>{{ i }}</p>
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

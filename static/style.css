@@ -1,0 +1,55 @@
+* {
+	padding: 0px;
+	margin: 0px auto;
+	font-family: 'Impact';
+}
+
+#wrapper {
+	width: 960px;
+	margin: 20px;
+}
+p {
+	display: inline-block;
+}
+#money {
+	width: 100px;
+	margin-left: 10px;
+	padding-left: 5px;
+	border: 1px solid black;
+}
+.box {
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	vertical-align: top;
+	border: 2px solid black;
+	margin: 16px;
+}
+
+h1, .earn, form {
+	display: block;
+	text-align: center;
+	margin-top: 15px;
+}
+input {
+	margin-top: 20px;
+	padding: 4px 25px;
+	background-color: gold;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+#console {
+	overflow-y: auto;
+	border: 1px black solid;
+	height: 150px;
+	margin-top: 10px;
+}
+#console p {
+	margin: 10px;
+}
+
+.log {
+	display: block;
+	color: green;
+}
