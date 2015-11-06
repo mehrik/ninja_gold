@@ -20,8 +20,8 @@ def index():
 def process():
 	date = datetime.now().strftime('(%Y/%m/%d %r)')
 	if request.form['action'] == 'reset':
-		session['gold'] = 0
-		#want to add a way to clear the activities box
+		session.pop('gold')
+		session.pop('log')
 	elif request.form['action'] == 'farm':
 		goldearned = random.randrange(10,21)
 		session['gold'] += goldearned
