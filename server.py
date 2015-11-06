@@ -25,15 +25,21 @@ def process():
 	elif request.form['action'] == 'cave':
 		goldearned = random.randrange(5,11)
 		session['gold'] += goldearned
+		consolelog.insert(0, 'Earned' + ' ' +str(goldearned)+ ' ' + 'golds from the cave!')
 	elif request.form['action'] == 'house':
 		goldearned = random.randrange(2,6)
 		session['gold'] += goldearned
+		consolelog.insert(0, 'Earned' + ' ' +str(goldearned)+ ' ' + 'golds from the farm!')
 	else:
 		gamble = round(random.random())
 		if gamble == 0:
-			session['gold'] += random.randrange(0,51)
+			goldearned = random.randrange(0,51)
+			session['gold'] += goldearned
+			consolelog.insert(0, 'Entered a casino and won' + ' ' +str(goldearned)+ ' ' + 'golds... YAY!')
 		else:
-			session['gold'] -= random.randrange(0,51)
+			goldearned = random.randrange(0,51)
+			session['gold'] -= goldearned
+			consolelog.insert(0, 'Entered a casino and lost' + ' ' +str(goldearned)+ ' ' + 'golds... ouch..')
 			if session['gold'] < 0:
 				session['gold'] = 0
 	session['log'] = consolelog

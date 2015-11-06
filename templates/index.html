@@ -51,7 +51,11 @@
 			<div id='console'>
 				{% if request.form['action'] == farm %}
 					{% for i in session['log']: %}
-						<p class='log'>{{ i }}</p>
+						{% if 'lost' in i %}
+							<p class='red'>{{ i }}</p>
+						{% else %}
+							<p class='log'>{{ i }}</p>
+						{% endif %}
 					{% endfor %}
 				{% endif %}
 			</div>
