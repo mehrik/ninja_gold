@@ -53,7 +53,7 @@
 		<div id='activities'>
 			<p>Activities:</p>
 			<div id='console'>
-				{% if request.form['action'] == farm %}
+				{% if session['log'] %}
 					{% for i in session['log']: %}
 						{% if 'lost' in i %}
 							<p class='red'>{{ i }}</p>
